@@ -66,11 +66,13 @@
   </button>
   <!-- Check if width is mobile size. if true collapse. use the div below-->
   <div class="side-bar w-80 h-screen bg-slate-50 shadow-xl sm:block pt-20 relative z-[2] collapse">
-    <button class="sb-collapse-button relative left-72 top-px">
-      <span class="material-symbols-outlined">
-        chevron_left
-      </span>
-    </button>
+    <div class="w-full flex justify-end">
+      <button class="sb-collapse-button pr-4">
+        <span class="material-symbols-outlined">
+          chevron_left
+        </span>
+      </button>
+    </div>
     <ul class="flex flex-col items-center gap-1 text-gray-700">
       <li class="sidebar-item my-2 hover:border-b-4 hover:border-b-zinc-300 w-64 " id="sidebar-item" aria-expanded="true" aria-haspopup="true">
         <h3 class="font-semibold">Dashboard</h3>
