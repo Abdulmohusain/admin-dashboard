@@ -1,14 +1,18 @@
-const sidebar = document.querySelector(".side-bar button");
-sidebar.addEventListener("click", function(event) {
-    document.querySelector(".side-bar").classList.add("collapse")
+// Side Bar collapse 
+function sideBar() {
+    const sidebar = document.querySelector(".sb-collapse-button");
+    sidebar.addEventListener("click", function(event) {
+        document.querySelector(".side-bar").classList.add("collapse")
+    })
+    const expandButton = document.querySelector(".sb-expand-button");
+    expandButton.addEventListener("click", function(event) {
+        document.querySelector(".side-bar").classList.remove("collapse")
 })
-const expandButton = document.querySelector(".expand-button");
-expandButton.addEventListener("click", function(event) {
-    document.querySelector(".side-bar").classList.remove("collapse")
-})
-
-const notificationButton = document.querySelector(".notification-button")
-notificationButton.addEventListener("click", function(event) {
+}
+// Header dropdown for nortification and profile dropdown
+function navBarDropdown() {
+    const notificationButton = document.querySelector(".notification-button")
+    notificationButton.addEventListener("click", function(event) {
     const dropdown = document.querySelector(".notification-dropdown");
     if (dropdown.classList.contains("collapse")) {
         dropdown.classList.remove("collapse")
@@ -20,8 +24,8 @@ notificationButton.addEventListener("click", function(event) {
         dropdown.classList.add("collapse")
     }
 }) 
-const accountButton = document.querySelector(".account-button")
-accountButton.addEventListener("click", function(event) {
+    const accountButton = document.querySelector(".account-button")
+    accountButton.addEventListener("click", function(event) {
     const dropdown = document.querySelector(".account-dropdown");
     if (dropdown.classList.contains("collapse")) {
         dropdown.classList.remove("collapse")
@@ -33,19 +37,29 @@ accountButton.addEventListener("click", function(event) {
         dropdown.classList.add("collapse")
     }
 }) 
-// const menuButton = document.querySelector(".menu-button")
-// menuButton.addEventListener("click", function(event) {
-//     const dropdown = document.querySelector(".menu-dropdown");
-//     if (dropdown.classList.contains("collapse")) {
-//         dropdown.classList.remove("collapse")
-//     } else {
-//         dropdown.classList.add("collapse")
-//     }
-// }) 
+}
+
+// Side Bar dropdown
+function sideBarItemsDropdown() {
+    const sideBarItems = document.querySelectorAll(".sidebar-item")
+
+        sideBarItems.forEach(item => {
+            item.addEventListener("click", function(event) {
+                if (item.querySelector("div").classList.contains("hidden")) {
+                    item.querySelector("div").classList.remove("hidden")
+                } else {
+                    item.querySelector("div").classList.add("hidden")
+            }
+            }) 
+    })
+}
+
+function menuButton() {
+
+}
 
 
-// document.body.addEventListener("mouseover", function(event) {
-//     if (event.target.classList.contains("notification-button")) {
-//         document.querySelector("notification-dropdown").classList.remove("collapse")
-//     }
-// })
+sideBar()
+navBarDropdown()
+sideBarItemsDropdown()
+menuButton()
