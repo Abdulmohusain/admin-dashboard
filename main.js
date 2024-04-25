@@ -1,6 +1,6 @@
 #!/usr/bin/node
 function isMobile() {
-    const breakpoint = 768;
+    const breakpoint = 640;
     const width = window.innerWidth;
     return width <= breakpoint;
 }
