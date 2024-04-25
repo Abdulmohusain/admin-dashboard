@@ -1,3 +1,24 @@
+#!/usr/bin/node
+function isMobile() {
+    const breakpoint = 768;
+    const width = window.innerWidth;
+    return width <= breakpoint;
+}
+if (isMobile()) {
+    document.querySelector(".side-bar").classList.add("collapse");
+}
+
+// Add event listener for window resize
+window.addEventListener("resize", function() {
+    if (isMobile()) {
+        // Collapse sidebar
+        document.querySelector(".side-bar").classList.add("collapse");
+    } else {
+        // Expand sidebar
+        document.querySelector(".side-bar").classList.remove("collapse");
+    }
+});
+
 // Side Bar collapse 
 function sideBar() {
     const sidebar = document.querySelector(".sb-collapse-button");
@@ -9,7 +30,7 @@ function sideBar() {
         document.querySelector(".side-bar").classList.remove("collapse")
 })
 }
-// Header dropdown for nortification and profile dropdown
+// Header dropdown for notification and profile dropdown
 function navBarDropdown() {
     const notificationButton = document.querySelector(".notification-button")
     notificationButton.addEventListener("click", function(event) {
@@ -54,12 +75,6 @@ function sideBarItemsDropdown() {
     })
 }
 
-function menuButton() {
-
-}
-
-
 sideBar()
 navBarDropdown()
 sideBarItemsDropdown()
-menuButton()
