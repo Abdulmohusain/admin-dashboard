@@ -4,9 +4,9 @@ function isMobile() {
     const width = window.innerWidth;
     return width <= breakpoint;
 }
-if (isMobile()) {
-    document.querySelector(".side-bar").classList.add("collapse");
-}
+// if (isMobile()) {
+//     document.querySelector(".side-bar").classList.add("collapse");
+// }
 
 // Add event listener for window resize
 window.addEventListener("resize", function() {
